@@ -1,9 +1,9 @@
 package ArrayEnginer;
 
 public interface ProcessingArray {
-	void fillArrayRandom(Integer [] array, int range);
+	void fillArrayRandom(int [] array, int range);
 	
-	void fillArrayInAscendingOrder(Integer [] array);
+	void fillArrayInAscendingOrder(int [] array);
 	
-	void fillArrayInDescendingOrder(Integer [] array);
+	void fillArrayInDescendingOrder(int [] array);
 }

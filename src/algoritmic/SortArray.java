@@ -1,5 +1,6 @@
 package algoritmic;
 
 public interface SortArray {
-	void sortByShakerInteger(Integer [] array);
+	void sortByShakerInteger(int [] array);
+	void sortByBubble(int[] array);
 }
