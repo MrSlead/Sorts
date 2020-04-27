@@ -1,25 +1,25 @@
 package ArrayEnginer;
 
-import java.util.Arrays;
-import java.util.Collections;
 
 public class ProcessingArrayWork implements ProcessingArray {
 
-	public void fillArrayRandom(Integer[] array) {
+	public void fillArrayRandom(Integer[] array, int range) {
 		for(int i = 0; i < array.length; i++) {
-			array[i] = (int) (Math.random() * 50000);
+			array[i] = (int) (Math.random() * range);
 		}
 	}
 
 	public void fillArrayInAscendingOrder(Integer[] array) {
-		fillArrayRandom(array);
-		Arrays.sort(array);
+		for(int i = 0; i < array.length; i++) {
+			array[i] = i;
+		}
 		
 	}
 
 	public void fillArrayInDescendingOrder(Integer[] array) {
-		fillArrayRandom(array);
-		Arrays.sort(array, Collections.reverseOrder());	
+		for(int i = array.length - 1; i >= 0; i--) {
+			array[i] = i;
+		}
 	}
 
 }
