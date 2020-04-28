@@ -25,22 +25,27 @@ public class Main {
 				//Integer [] array = new Integer[i]; // Bad way
 				
 				int array [] = new int[i];
+				int N = 1;
+				long mediumValueOperations = 0;
 				
-				for(int j = 0; j < 1; j++) {
-					//delay.fillArrayRandom(array, range); // Средний случай, если j <= 100
-					//delay.fillArrayInAscendingOrder(array); // Наилучший способ, если j < 1
-					delay.fillArrayInDescendingOrder(array); // Наихудший способ, если j < 1
+				long time = System.currentTimeMillis();
+				for(int j = 0; j < N; j++) {
+					//delay.fillArrayRandom(array, range); // medium event at N = 100
+					//delay.fillArrayInAscendingOrder(array); // bad event at N = 1
+					delay.fillArrayInDescendingOrder(array); // best event at N = 1
 					
-					long time = System.currentTimeMillis();
-					//sortArray.sortByShakerInteger(array); // Шейкерская сортировка
-					sortArray.sortByBubble(array);
-					
-					bw.write(String.valueOf(((SortArrayInteger)sortArray).getCount()));
-					bw.newLine();
-					System.out.println(i + " complited, time: " + (double)(System.currentTimeMillis() - time) / 1000);
+					//sortArray.sortByShakerInteger(array); // Shaker sort
+					//sortArray.sortByBubble(array); // Bubble sort
+					sortArray.sortByShell(array); // Shell sort
+					mediumValueOperations += ((SortArrayInteger)sortArray).getCount();
 				}
+				
+				bw.write(String.valueOf(mediumValueOperations / N));
+				bw.newLine();
+				System.out.println(i + " complited, time: " + (double)(System.currentTimeMillis() - time) / 1000);
 				
 			}
 		}
 	}
 }
+//System.out.println(Arrays.toString(array));
