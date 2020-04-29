@@ -20,7 +20,7 @@ public class Main {
 		int range = 50000;
 		
 		
-		try(BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Кокон2\\Desktop\\операции.txt"))){	
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\User\\Desktop\\test.txt"))){	
 			for(int i = 500; i <= 50000; i += 500) {
 				//Integer [] array = new Integer[i]; // Bad way
 				
@@ -34,9 +34,9 @@ public class Main {
 					//delay.fillArrayInAscendingOrder(array); // bad event at N = 1
 					delay.fillArrayInDescendingOrder(array); // best event at N = 1
 					
-					//sortArray.sortByShakerInteger(array); // Shaker sort
+					sortArray.sortByShakerInteger(array); // Shaker sort
 					//sortArray.sortByBubble(array); // Bubble sort
-					sortArray.sortByShell(array); // Shell sort
+					//sortArray.sortByShell(array); // Shell sort
 					mediumValueOperations += ((SortArrayInteger)sortArray).getCount();
 				}
 				

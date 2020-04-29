@@ -11,7 +11,7 @@ public class SortArrayInteger implements SortArray {
         do
         {
             
-            for (int i = left; i < right; i++)
+            for (int i = left; i < right; i++, count++)
             {
             	count = count + 1;
                 if(array[i] > array[i+1])
@@ -24,7 +24,7 @@ public class SortArrayInteger implements SortArray {
             }
             right--; 
            
-            for (int i = right; i > left ; i--)
+            for (int i = right; i > left ; i--, count++)
             {
             	count = count + 1;
                 if(array[i] < array[i-1])
@@ -69,11 +69,13 @@ public class SortArrayInteger implements SortArray {
 	public void sort(int[] array) {
 		count = 0;
         int h = 1;
-        while (h*3 < array.length)
+        while (h*3 < array.length) {
+        	count++;
             h = h * 3 + 1;
+        }
 
         while(h >= 1) {
-        	count = count + 1;
+        	count++;
             hSort(array, h);
             h = h/3;
         }
@@ -81,8 +83,8 @@ public class SortArrayInteger implements SortArray {
 
     private void hSort(int[] array, int h) {
         int length = array.length;
-        for (int i = h; i < length; i++) {
-            for (int j = i; j >= h; j = j - h) {
+        for (int i = h; i < length; i++, count++) {
+            for (int j = i; j >= h; j = j - h, count++) {
             	count = count + 1;
                 if (array[j] < array[j - h]) {
                 	int c = array[j];
