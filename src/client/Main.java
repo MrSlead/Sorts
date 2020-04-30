@@ -19,6 +19,7 @@ public class Main {
 		SortArray sortArray = new SortArrayInteger();
 		int range = 50000;
 		
+
 		int N = 1;
 		try(BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Кокон2\\Desktop\\операции.txt"))){	
 			for(int i = 500; i <= 50000; i += 500) {
@@ -40,7 +41,7 @@ public class Main {
 				
 				bw.write(String.valueOf(mediumValueOperations / N));
 				bw.newLine();
-				System.out.println(i + " complited, time: " + (double)(System.currentTimeMillis() - time) / 1000);
+				//System.out.println(i + " complited, time: " + (double)(System.currentTimeMillis() - time) / 1000);
 				
 			}
 		}

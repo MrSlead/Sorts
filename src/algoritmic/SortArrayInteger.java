@@ -4,12 +4,12 @@ package algoritmic;
 public class SortArrayInteger implements SortArray {
 	private long count;
 	
-	
 	public void sortQuick(int[] array, int low, int high) {
 		if(getCount() != 0) count = 0;
 		sortQuickAlgoritm(array, low, high);
 	}
 	
+
 	private void sortQuickAlgoritm(int[] array, int low, int high) {
 		count++;
         if (array.length == 0)
@@ -46,7 +46,6 @@ public class SortArrayInteger implements SortArray {
                 i++;
                 j--;
             }
-        }
  
         count++;
         if (low < j)
@@ -54,8 +53,9 @@ public class SortArrayInteger implements SortArray {
         count++;
         if (high > i)
         	sortQuickAlgoritm(array, i, high);
-    }
-	
+        }  
+	}
+        	
 	
 	 public void sortDirectSelection(int[] array) {
 		 count = 0;
