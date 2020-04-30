@@ -19,24 +19,22 @@ public class Main {
 		SortArray sortArray = new SortArrayInteger();
 		int range = 50000;
 		
-		
+		int N = 1;
 		try(BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Кокон2\\Desktop\\операции.txt"))){	
 			for(int i = 500; i <= 50000; i += 500) {
 				//Integer [] array = new Integer[i]; // Bad way
 				
 				int array [] = new int[i];
-				int N = 1;
 				long mediumValueOperations = 0;
 				
 				long time = System.currentTimeMillis();
 				for(int j = 0; j < N; j++) {
-					//delay.fillArrayRandom(array, range); // medium event at N = 100
+					delay.fillArrayRandom(array, range); // medium event at N = 100
 					//delay.fillArrayInAscendingOrder(array); // bad event at N = 1
-					delay.fillArrayInDescendingOrder(array); // best event at N = 1
+					//delay.fillArrayInDescendingOrder(array); // best event at N = 1
 					
-					//sortArray.sortByShakerInteger(array); // Shaker sort
-					//sortArray.sortByBubble(array); // Bubble sort
-					sortArray.sortByShell(array); // Shell sort
+					//sortArray.sortQuick(array, 0, array.length-1); // fast sort
+					sortArray.sortDirectSelection(array); // sort choice
 					mediumValueOperations += ((SortArrayInteger)sortArray).getCount();
 				}
 				
@@ -48,4 +46,4 @@ public class Main {
 		}
 	}
 }
-//System.out.println(Arrays.toString(array));
+
